@@ -7,22 +7,28 @@
             body {
                 background-color: black;
                 color: white;
-                font-family: Arial, sans-serif;
             }
 
             .header-container {
                 text-align: center;
             }
 
+            /* Styles for the landscape GIF */
+            .header-gif {
+                width: 100%;          /* Stretches to fill the container width */
+                max-width: 800px;     /* Limits max width so it doesn't get unnaturally huge */
+                height: auto;         /* Maintains landscape aspect ratio */
+                display: block;
+                margin: 0 auto;       /* Centers the GIF horizontally */
+                border-radius: 8px;   /* Optional: adds slightly rounded corners */
+            }
+
             .underlined-heading {
                 text-decoration: underline;
-                margin-top: 15px;
-                margin-bottom: 0px;
             }
 
             .content-container {
                 text-align: center;
-                margin-top: 20px;
             }
 
             .content-container ol {
@@ -30,54 +36,28 @@
                 text-align: left;
             }
 
+            h1 {
+                margin-top: 15px;
+                margin-bottom: 0px;
+            }
+
             a {
                 color: #4ea8de;
-            }
-
-            button {
-                padding: 8px 15px;
-                border-radius: 4px;
-                border: none;
-                background-color: #4ea8de;
-                color: black;
-                font-weight: bold;
-                cursor: pointer;
-            }
-
-            button:hover {
-                background-color: #3a86b7;
-            }
-
-            /* CSS class that hides elements */
-            .hidden {
-                display: none;
             }
         </style>
     </head>
 
     <body>
         <div class="header-container">
+            <img class="header-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0dzQ3eGZ2eXp5eGZ2eXp5eGZ2eXp5eGZ2eXp5eGZ2eXp5/3o7rc0qU6b52Nk/giphy.gif" alt="Landscape GIF">
+            
             <h1 class="underlined-heading">Welcome</h1>
         </div>
 
         <div class="content-container">
-            <!-- Toggle Button -->
-            <button onclick="toggleContent()">Toggle Secret Link</button>
-
-            <!-- Hidden Content -->
-            <div id="secretContent" class="hidden">
-                <ol>
-                    <li><a href="https://www.nasa.gov/" target="_blank">www.nasa.gov</a></li>
-                </ol>
-            </div>
+            <ol>
+                <li><a href="https://www.nasa.gov/" target="_blank">www.nasa.gov</a></li>
+            </ol>
         </div>
-
-        <!-- JavaScript Logic -->
-        <script>
-            function toggleContent() {
-                const content = document.getElementById("secretContent");
-                content.classList.toggle("hidden");
-            }
-        </script>
     </body>
 </html>
