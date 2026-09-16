@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>itsa33.github.io</title>
+        <title>08-00</title>
         <style>
             body {
-                background-color:black;
+                background-color: black;
                 color: white;
+                font-family: Arial, sans-serif;
             }
 
             .header-container {
@@ -15,10 +16,13 @@
 
             .underlined-heading {
                 text-decoration: underline;
+                margin-top: 15px;
+                margin-bottom: 0px;
             }
 
             .content-container {
                 text-align: center;
+                margin-top: 20px;
             }
 
             .content-container ol {
@@ -26,20 +30,54 @@
                 text-align: left;
             }
 
-            h1 {
-                margin-top: 15px;
-                margin-bottom: 0px;
-            }
-
             a {
                 color: #4ea8de;
+            }
+
+            button {
+                padding: 8px 15px;
+                border-radius: 4px;
+                border: none;
+                background-color: #4ea8de;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #3a86b7;
+            }
+
+            /* CSS class that hides elements */
+            .hidden {
+                display: none;
             }
         </style>
     </head>
 
     <body>
         <div class="header-container">
-            <h1>Hi.</h1>
+            <h1 class="underlined-heading">Welcome</h1>
         </div>
+
+        <div class="content-container">
+            <!-- Toggle Button -->
+            <button onclick="toggleContent()">Toggle Secret Link</button>
+
+            <!-- Hidden Content -->
+            <div id="secretContent" class="hidden">
+                <ol>
+                    <li><a href="https://www.nasa.gov/" target="_blank">www.nasa.gov</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- JavaScript Logic -->
+        <script>
+            function toggleContent() {
+                const content = document.getElementById("secretContent");
+                content.classList.toggle("hidden");
+            }
+        </script>
     </body>
 </html>
