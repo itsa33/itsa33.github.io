@@ -7,42 +7,133 @@
         <link rel="icon" type="image/png" href="PIA12000~orig.png?v=2">
         
         <style>
+            :root {
+                --background: #0d0f0f;
+                --surface-line: #2b302e;
+                --text: #f1eee5;
+                --muted: #a7ada7;
+                --accent: #d8a96e;
+                --link: #a9d8d3;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
             body {
-                background-color: black;
-                color: white;
+                min-height: 100vh;
+                margin: 0;
+                background-color: var(--background);
+                background-image: radial-gradient(circle at 50% 0, #24302c 0, transparent 34rem);
+                color: var(--text);
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 17px;
+                line-height: 1.5;
             }
 
             .header-container {
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 42px 24px 0;
                 text-align: center;
             }
 
             .header-gif {
-                width: 350px;
+                width: min(350px, 100%);
                 height: auto;
                 display: block;
                 margin: 0 auto;
+                border: 1px solid var(--surface-line);
             }
 
             .underlined-heading {
-                text-decoration: underline;
+                margin: 22px 0 0;
+                color: var(--text);
+                font-family: Georgia, serif;
+                font-size: clamp(2.3rem, 7vw, 4rem);
+                font-weight: normal;
+                letter-spacing: 0.02em;
+            }
+
+            .underlined-heading::after {
+                content: "";
+                display: block;
+                width: 42px;
+                height: 2px;
+                margin: 14px auto 0;
+                background: var(--accent);
             }
 
             .content-container {
-                text-align: center;
+                max-width: 760px;
+                margin: 54px auto 0;
+                padding: 0 24px 56px;
             }
 
-            .content-container ol {
-                display: inline-block;
-                text-align: left;
+            .link-groups {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px 48px;
             }
 
-            h1 {
-                margin-top: 15px;
-                margin-bottom: 0px;
+            .link-group {
+                border-top: 1px solid var(--surface-line);
+                padding-top: 14px;
+            }
+
+            .link-group h2 {
+                margin: 0 0 10px;
+                color: var(--accent);
+                font-size: 0.72rem;
+                font-weight: bold;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+            }
+
+            .link-group ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .link-group li {
+                border-bottom: 1px solid rgba(43, 48, 46, 0.65);
             }
 
             a {
-                color: #4ea8de;
+                display: block;
+                padding: 8px 0;
+                color: var(--link);
+                text-decoration-color: transparent;
+                text-underline-offset: 4px;
+                transition: color 160ms ease, text-decoration-color 160ms ease;
+            }
+
+            a:hover,
+            a:focus-visible {
+                color: var(--text);
+                text-decoration-color: var(--accent);
+            }
+
+            a:focus-visible {
+                outline: 1px solid var(--accent);
+                outline-offset: 4px;
+            }
+
+            @media (max-width: 600px) {
+                .header-container {
+                    padding-top: 24px;
+                }
+
+                .content-container {
+                    margin-top: 40px;
+                    padding: 0 18px 40px;
+                }
+
+                .link-groups {
+                    grid-template-columns: 1fr;
+                    gap: 18px;
+                }
             }
         </style>
     </head>
@@ -55,11 +146,40 @@
         </div>
 
         <div class="content-container">
-            <ol>
-                <li><a href="https://www.nasa.gov/" target="_blank">www.nasa.gov</a></li>
-                <li><a href="https://www.mit.edu/" target="_blank">www.mit.edu</a></li>
-                <li><a href="https://www.khanacademy.org/" target="_blank">www.khanacademy.org</a></li>
-            </ol>
+            <div class="link-groups">
+                <section class="link-group">
+                    <h2>Reminders</h2>
+                    <ul>
+                        <li><a href="https://quran.com/" target="_blank" rel="noopener noreferrer">quran.com</a></li>
+                        <li><a href="https://quran.com/28/24" target="_blank" rel="noopener noreferrer">quran.com/28/24</a></li>
+                        <li><a href="https://99namesofallah.name/" target="_blank" rel="noopener noreferrer">The 99 Names of Allah</a></li>
+                        <li><a href="https://youtube.com/shorts/pft_KF4TCks?si=7iWHMD9A5gbpPjxw" target="_blank" rel="noopener noreferrer">1883 (1)</a></li>
+                    </ul>
+                </section>
+
+                <section class="link-group">
+                    <h2>Science</h2>
+                    <ul>
+                        <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">www.nasa.gov</a></li>
+                        <li><a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">www.mit.edu</a></li>
+                        <li><a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">www.khanacademy.org</a></li>
+                    </ul>
+                </section>
+
+                <section class="link-group">
+                    <h2>Writing</h2>
+                    <ul>
+                        <li><a href="https://typst.app/docs/" target="_blank" rel="noopener noreferrer">typst.app/docs</a></li>
+                    </ul>
+                </section>
+
+                <section class="link-group">
+                    <h2>Social Media</h2>
+                    <ul>
+                        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer">discord.com</a></li>
+                    </ul>
+                </section>
+            </div>
         </div>
     </body>
 </html>
