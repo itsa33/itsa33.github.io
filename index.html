@@ -8,12 +8,12 @@
         
         <style>
             :root {
-                --background: #0d0f0f;
-                --surface-line: #2b302e;
-                --text: #f1eee5;
-                --muted: #a7ada7;
-                --accent: #d8a96e;
-                --link: #a9d8d3;
+                --background: #070d17;
+                --surface-line: #263548;
+                --text: #e5ebf1;
+                --muted: #91a0b2;
+                --accent: #fc3d21;
+                --link: #a8c8e5;
             }
 
             * {
@@ -24,9 +24,14 @@
                 min-height: 100vh;
                 margin: 0;
                 background-color: var(--background);
-                background-image: radial-gradient(circle at 50% 0, #24302c 0, transparent 34rem);
+                background-image:
+                    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1px),
+                    radial-gradient(circle at 78% 26%, rgba(168, 200, 229, 0.5) 0 1px, transparent 1px),
+                    radial-gradient(circle at 64% 72%, rgba(255, 255, 255, 0.4) 0 1px, transparent 1px),
+                    radial-gradient(circle at 28% 84%, rgba(168, 200, 229, 0.35) 0 1px, transparent 1px);
+                background-size: 260px 220px, 340px 280px, 420px 360px, 300px 320px;
                 color: var(--text);
-                font-family: "Trebuchet MS", sans-serif;
+                font-family: Georgia, serif;
                 font-size: 17px;
                 line-height: 1.5;
             }
@@ -34,7 +39,7 @@
             .header-container {
                 max-width: 760px;
                 margin: 0 auto;
-                padding: 42px 24px 0;
+                padding: 64px 24px 0;
                 text-align: center;
             }
 
@@ -44,29 +49,30 @@
                 display: block;
                 margin: 0 auto;
                 border: 1px solid var(--surface-line);
+                box-shadow: 0 0 0 4px rgba(38, 53, 72, 0.22);
             }
 
             .underlined-heading {
-                margin: 22px 0 0;
+                margin: 26px 0 0;
                 color: var(--text);
                 font-family: Georgia, serif;
-                font-size: clamp(2.3rem, 7vw, 4rem);
+                font-size: clamp(2.4rem, 7vw, 4.2rem);
                 font-weight: normal;
-                letter-spacing: 0.02em;
+                letter-spacing: -0.025em;
             }
 
             .underlined-heading::after {
                 content: "";
                 display: block;
-                width: 42px;
+                width: 56px;
                 height: 2px;
-                margin: 14px auto 0;
+                margin: 18px auto 0;
                 background: var(--accent);
             }
 
             .content-container {
                 max-width: 760px;
-                margin: 54px auto 0;
+                margin: 64px auto 0;
                 padding: 0 24px 56px;
             }
 
@@ -78,16 +84,22 @@
 
             .link-group {
                 border-top: 1px solid var(--surface-line);
-                padding-top: 14px;
+                padding-top: 16px;
             }
 
             .link-group h2 {
-                margin: 0 0 10px;
-                color: var(--accent);
-                font-size: 0.72rem;
-                font-weight: bold;
-                letter-spacing: 0.16em;
+                margin: 0 0 11px;
+                color: var(--muted);
+                font-family: "Helvetica Neue", Arial, sans-serif;
+                font-size: 0.7rem;
+                font-weight: normal;
+                letter-spacing: 0.12em;
                 text-transform: uppercase;
+            }
+
+            .link-group h2::before {
+                content: "// ";
+                color: var(--accent);
             }
 
             .link-group ul {
@@ -97,12 +109,12 @@
             }
 
             .link-group li {
-                border-bottom: 1px solid rgba(43, 48, 46, 0.65);
+                border-bottom: 1px solid rgba(48, 54, 54, 0.72);
             }
 
             a {
                 display: block;
-                padding: 8px 0;
+                padding: 7px 0;
                 color: var(--link);
                 text-decoration-color: transparent;
                 text-underline-offset: 4px;
@@ -122,11 +134,11 @@
 
             @media (max-width: 600px) {
                 .header-container {
-                    padding-top: 24px;
+                    padding-top: 28px;
                 }
 
                 .content-container {
-                    margin-top: 40px;
+                    margin-top: 48px;
                     padding: 0 18px 40px;
                 }
 
