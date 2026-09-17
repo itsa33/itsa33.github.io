@@ -25,11 +25,11 @@
                 margin: 0;
                 background-color: var(--background);
                 background-image:
-                    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.42) 0 1px, transparent 1px),
-                    radial-gradient(circle at 78% 26%, rgba(255, 255, 255, 0.32) 0 1px, transparent 1px),
-                    radial-gradient(circle at 64% 72%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px),
-                    radial-gradient(circle at 28% 84%, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px);
-                background-size: 260px 220px, 340px 280px, 420px 360px, 300px 320px;
+                    radial-gradient(circle at 16% 22%, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.5px),
+                    radial-gradient(circle at 82% 15%, rgba(255, 255, 255, 0.58) 0 1px, transparent 1.5px),
+                    radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px),
+                    radial-gradient(circle at 22% 78%, rgba(255, 255, 255, 0.42) 0 1px, transparent 1.5px);
+                background-size: 310px 260px, 430px 350px, 370px 420px, 520px 440px;
                 color: var(--text);
                 font-family: Georgia, serif;
                 font-size: 17px;
@@ -50,6 +50,7 @@
                 margin: 0 auto;
                 border: 1px solid var(--surface-line);
                 box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
+                filter: none;
             }
 
             .underlined-heading {
@@ -58,7 +59,7 @@
                 font-family: Georgia, serif;
                 font-size: clamp(2.4rem, 7vw, 4.2rem);
                 font-weight: normal;
-                letter-spacing: -0.025em;
+                letter-spacing: 0.035em;
             }
 
             .underlined-heading::after {
@@ -83,8 +84,18 @@
             }
 
             .link-group {
+                position: relative;
                 border-top: 1px solid var(--surface-line);
                 padding-top: 16px;
+            }
+
+            .link-group::after {
+                content: "";
+                position: absolute;
+                top: -1px;
+                right: 0;
+                width: 34px;
+                border-top: 1px solid var(--accent);
             }
 
             .link-group h2 {
@@ -98,8 +109,20 @@
             }
 
             .link-group h2::before {
-                content: "// ";
+                content: "01 / ";
                 color: var(--accent);
+            }
+
+            .link-group:nth-child(2) h2::before {
+                content: "02 / ";
+            }
+
+            .link-group:nth-child(3) h2::before {
+                content: "03 / ";
+            }
+
+            .link-group:nth-child(4) h2::before {
+                content: "04 / ";
             }
 
             .link-group ul {
@@ -170,42 +193,11 @@
                 </section>
 
                 <section class="link-group">
-                    <h2>Number Theory</h2>
+                    <h2>Science</h2>
                     <ul>
-                        <li><a href="https://oeis.org/" target="_blank" rel="noopener noreferrer">OEIS / integer sequences</a></li>
-                        <li><a href="https://primes.utm.edu/" target="_blank" rel="noopener noreferrer">The Prime Pages</a></li>
-                        <li><a href="https://www.lmfdb.org/" target="_blank" rel="noopener noreferrer">LMFDB / mathematical data</a></li>
-                        <li><a href="https://mathworld.wolfram.com/NumberTheory.html" target="_blank" rel="noopener noreferrer">MathWorld / number theory</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Mathematical Worlds</h2>
-                    <ul>
-                        <li><a href="https://proofwiki.org/" target="_blank" rel="noopener noreferrer">ProofWiki</a></li>
-                        <li><a href="https://ocw.mit.edu/search/?d=Mathematics" target="_blank" rel="noopener noreferrer">MIT OpenCourseWare</a></li>
-                        <li><a href="https://www.3blue1brown.com/" target="_blank" rel="noopener noreferrer">3Blue1Brown</a></li>
-                        <li><a href="https://www.quantamagazine.org/mathematics/" target="_blank" rel="noopener noreferrer">Quanta / mathematics</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Physics &amp; Cosmos</h2>
-                    <ul>
-                        <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA</a></li>
-                        <li><a href="https://feynmanlectures.caltech.edu/" target="_blank" rel="noopener noreferrer">The Feynman Lectures</a></li>
-                        <li><a href="https://einstein-online.info/en/" target="_blank" rel="noopener noreferrer">Einstein Online</a></li>
-                        <li><a href="https://www.quantamagazine.org/physics/" target="_blank" rel="noopener noreferrer">Quanta / physics</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Scientific Archives</h2>
-                    <ul>
-                        <li><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arXiv</a></li>
-                        <li><a href="https://ui.adsabs.harvard.edu/" target="_blank" rel="noopener noreferrer">NASA ADS</a></li>
-                        <li><a href="https://www.nist.gov/pml" target="_blank" rel="noopener noreferrer">NIST reference data</a></li>
-                        <li><a href="https://plato.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford Encyclopedia</a></li>
+                        <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">www.nasa.gov</a></li>
+                        <li><a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">www.mit.edu</a></li>
+                        <li><a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">www.khanacademy.org</a></li>
                     </ul>
                 </section>
 
