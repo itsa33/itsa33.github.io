@@ -43,14 +43,14 @@
                 text-align: center;
             }
 
-            .header-gif {
+            .header-video {
                 width: min(350px, 100%);
-                height: auto;
+                aspect-ratio: 16 / 9;
                 display: block;
                 margin: 0 auto;
                 border: 1px solid var(--surface-line);
                 box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
-                filter: none;
+                background: #000;
             }
 
             .underlined-heading {
@@ -179,7 +179,15 @@
 
     <body>
         <div class="header-container">
-            <img class="header-gif" src="nasa_rocket_liftoff.gif" alt="Landscape GIF">
+            <iframe
+                class="header-video"
+                src="https://www.youtube.com/embed/A9tdMvrzDpE?si=m5MYN42sBm9joxC0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
             
             <h1 class="underlined-heading">Welcome</h1>
         </div>
