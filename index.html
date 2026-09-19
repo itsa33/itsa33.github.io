@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>20:00</title>
         
-        <link rel="icon" type="image/png" href="PIA12000~orig.png?v=2">
+        <link rel="icon" type="image/png" href="sfo-01/PIA12000~orig.png?v=2">
         
         <style>
             :root {
@@ -43,14 +44,14 @@
                 text-align: center;
             }
 
-            .header-gif {
-                width: min(350px, 100%);
-                height: auto;
+            .header-video {
+                width: min(680px, 100%);
+                aspect-ratio: 16 / 9;
                 display: block;
                 margin: 0 auto;
                 border: 1px solid var(--surface-line);
-                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
-                filter: none;
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04), 0 18px 50px rgba(0, 0, 0, 0.45);
+                background: #000;
             }
 
             .underlined-heading {
@@ -77,16 +78,19 @@
                 padding: 0 24px 56px;
             }
 
+            /* Automatic Counter Setup */
             .link-groups {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 22px 48px;
+                counter-reset: section-counter;
             }
 
             .link-group {
                 position: relative;
                 border-top: 1px solid var(--surface-line);
                 padding-top: 16px;
+                counter-increment: section-counter;
             }
 
             .link-group::after {
@@ -109,24 +113,9 @@
             }
 
             .link-group h2::before {
-                content: "01 / ";
+                /* Dynamically outputs 01 /, 02 /, 03 / etc. */
+                content: counter(section-counter, decimal-leading-zero) " / ";
                 color: var(--accent);
-            }
-
-            .link-group:nth-child(2) h2::before {
-                content: "02 / ";
-            }
-
-            .link-group:nth-child(3) h2::before {
-                content: "03 / ";
-            }
-
-            .link-group:nth-child(4) h2::before {
-                content: "04 / ";
-            }
-
-            .link-group:nth-child(5) h2::before {
-                content: "05 / ";
             }
 
             .link-group ul {
@@ -159,6 +148,23 @@
                 outline-offset: 4px;
             }
 
+            .secondary-video-wrap {
+                max-width: 760px;
+                margin: 18px auto 56px;
+                padding: 0 24px;
+                text-align: center;
+            }
+
+            .secondary-video {
+                width: min(560px, 100%);
+                aspect-ratio: 16 / 9;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid var(--surface-line);
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
+                background: #000;
+            }
+
             @media (max-width: 600px) {
                 .header-container {
                     padding-top: 28px;
@@ -178,65 +184,79 @@
     </head>
 
     <body>
-        <div class="header-container">
-            <img class="header-gif" src="nasa_rocket_liftoff.gif" alt="Landscape GIF">
-            
-            <h1 class="underlined-heading">Welcome</h1>
-        </div>
-
-        <div class="content-container">
-            <div class="link-groups">
-                <section class="link-group">
-                    <h2>Reminders</h2>
-                    <ul>
-                        <li><a href="https://quran.com/" target="_blank" rel="noopener noreferrer">quran.com</a></li>
-                        <li><a href="https://quran.com/28/24" target="_blank" rel="noopener noreferrer">quran.com/28/24</a></li>
-                        <li><a href="https://99namesofallah.name/" target="_blank" rel="noopener noreferrer">The 99 Names of Allah</a></li>
-                        <li><a href="https://youtube.com/shorts/pft_KF4TCks?si=7iWHMD9A5gbpPjxw" target="_blank" rel="noopener noreferrer">1883 (1)</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Science</h2>
-                    <ul>
-                        <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">www.nasa.gov</a></li>
-                        <li><a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">www.mit.edu</a></li>
-                        <li><a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">www.khanacademy.org</a></li>
-                        <li><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Writing</h2>
-                    <ul>
-                        <li><a href="https://typst.app/docs/" target="_blank" rel="noopener noreferrer">typst.app/docs</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Social Media</h2>
-                    <ul>
-                        <li><a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">mail.google.com</a></li>
-                        <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer">discord.com</a></li>
-                        <li><a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">web.whatsapp.com</a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">www.instagram.com</a></li>
-                        <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer">x.com</a></li>
-                        <li><a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">www.reddit.com</a></li>
-                        <li><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">www.pinterest.com</a></li>
-                        <li><a href="https://stackexchange.com/" target="_blank" rel="noopener noreferrer">stackexchange.com</a></li>
-                        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">www.facebook.com</a></li>
-                        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">www.linkedin.com</a></li>
-                    </ul>
-                </section>
-
-                <section class="link-group">
-                    <h2>Archive</h2>
-                    <ul>
-                        <li><a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">drive.google.com</a></li>
-                        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github.com</a></li>
-                    </ul>
-                </section>
+        <main>
+            <div class="header-container">
+                <iframe
+                    class="header-video"
+                    src="https://www.youtube.com/embed/"
+                    title="Intro video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+                
+                <h1 class="underlined-heading">Welcome</h1>
             </div>
-        </div>
+
+            <div class="content-container">
+                <div class="link-groups">
+                    <section class="link-group">
+                        <h2>Science</h2>
+                        <ul>
+                            <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer">www.nasa.gov</a></li>
+                            <li><a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">www.mit.edu</a></li>
+                            <li><a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">www.khanacademy.org</a></li>
+                            <li><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="link-group">
+                        <h2>Writing</h2>
+                        <ul>
+                            <li><a href="https://typst.app/docs/" target="_blank" rel="noopener noreferrer">typst.app/docs</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="link-group">
+                        <h2>Social Media</h2>
+                        <ul>
+                            <li><a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">mail.google.com</a></li>
+                            <li><a href="https://discord.com/" target="_blank" rel="noopener noreferrer">discord.com</a></li>
+                            <li><a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">web.whatsapp.com</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">www.instagram.com</a></li>
+                            <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer">x.com</a></li>
+                            <li><a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">www.reddit.com</a></li>
+                            <li><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">www.pinterest.com</a></li>
+                            <li><a href="https://stackexchange.com/" target="_blank" rel="noopener noreferrer">stackexchange.com</a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">www.facebook.com</a></li>
+                            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">www.linkedin.com</a></li>
+                            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">www.youtube.com</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="link-group">
+                        <h2>Archive</h2>
+                        <ul>
+                            <li><a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">drive.google.com</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github.com</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="secondary-video-wrap">
+                <iframe
+                    class="secondary-video"
+                    src="https://www.youtube.com/embed/shorts/LGqTjytSbMA"
+                    title="Closing video player"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </main>
     </body>
 </html>
