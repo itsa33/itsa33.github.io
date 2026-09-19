@@ -43,15 +43,14 @@
                 text-align: center;
             }
 
-            .header-video {
-                width: min(760px, 100%);
-                max-width: 100%;
-                aspect-ratio: 16 / 9;
+            .header-gif {
+                width: min(350px, 100%);
+                height: auto;
                 display: block;
                 margin: 0 auto;
                 border: 1px solid var(--surface-line);
-                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04), 0 18px 50px rgba(0, 0, 0, 0.45);
-                background: #000;
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
+                filter: none;
             }
 
             .underlined-heading {
@@ -165,10 +164,6 @@
                     padding-top: 28px;
                 }
 
-                .header-video {
-                    width: 100%;
-                }
-
                 .content-container {
                     margin-top: 48px;
                     padding: 0 18px 40px;
@@ -184,15 +179,7 @@
 
     <body>
         <div class="header-container">
-            <iframe
-                class="header-video"
-                src="https://www.youtube.com/embed/A9tdMvrzDpE?si=m5MYN42sBm9joxC0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+            <img class="header-gif" src="nasa_rocket_liftoff.gif" alt="Landscape GIF">
             
             <h1 class="underlined-heading">Welcome</h1>
         </div>
